@@ -2,23 +2,14 @@
 
 const { Controller } = require('egg');
 
-class HomeController extends Controller {
+class ViewController extends Controller {
   async index() {
-    const list = await this.app.mysql.get('list', {
+    const list = await this.app.mysql.get('user', {
       id: 1,
     });
     await this.ctx.render('index.ejs', {
       vmData: {
-        a: 111,
         list,
-      },
-    });
-  }
-
-  async dev() {
-    await this.ctx.render('dev.ejs', {
-      vmData: {
-        a: 111,
       },
     });
   }
@@ -33,4 +24,4 @@ class HomeController extends Controller {
   }
 }
 
-module.exports = HomeController;
+module.exports = ViewController;

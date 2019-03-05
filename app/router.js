@@ -5,9 +5,12 @@
  */
 module.exports = app => {
   const { router, controller } = app;
-  router.get('/', controller.home.index);
 
-  router.get('/dev', controller.home.dev);
+  // views
+  router.get('/', controller.views.index);
 
-  router.get('/getMoniterData', controller.home.moniter);
+  // users
+
+  // performance
+  router.get('/getMoniterData', controller.performance.moniter);
 };
